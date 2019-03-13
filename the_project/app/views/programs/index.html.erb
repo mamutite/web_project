@@ -18,6 +18,8 @@
     <div class="program">
       <h2 class = "title-program" ><%= program.name %></h2>
       <p class = "text-program"><%= program.description %></p>
+      <%= image_tag program.image.url, :size => "200x200" %>
+      <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>
 </body>

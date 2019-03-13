@@ -16,8 +16,14 @@ class ProgramsController < ApplicationController
     end
   end
 
+  def destroy
+    @program = Program.find(params[:id])
+    @program.destroy
+    redirect_to programs_path
+  end
+
 private
   def program_params
-    params.require(:program).permit(:name, :description)
+    params.require(:program).permit(:name, :description, :image)
   end
 end
