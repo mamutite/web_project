@@ -24,6 +24,6 @@ class ProgramsController < ApplicationController
 
 private
   def program_params
-    params.require(:program).permit(:name, :description, :image)
+    params.require(:program).permit(:name, :description, :image, :document)
   end
 end
