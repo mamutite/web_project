@@ -7,5 +7,5 @@ class Program < ApplicationRecord
 
   validates :image, presence: true
   validates :name, presence: true, length: {minimum: 6}
-  validates :description, presence: true, length: {maximum: 500}
+  validates :description, presence: true, length: {maximum: 5000}
 end

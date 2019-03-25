@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-
   background-color: rgb(208, 76, 157);
   padding-top: 45px;
   background-repeat: no-repeat;
@@ -20,6 +19,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 li {

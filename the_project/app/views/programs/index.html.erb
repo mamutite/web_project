@@ -14,13 +14,22 @@
 <body>
   <h3><%= link_to "Create a new program",  new_program_path %></h3>
 
-  <% @programs.each do |program| %>
-    <div class="program">
-      <h2 class = "title-program" ><%= program.name %></h2>
-      <p class = "text-program"><%= program.description %></p>
-      <%= image_tag program.image.url, :size => "200x200" %>
-      <%= link_to "Download", program.document.url(:original, false) %>
-      <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
-  <% end %>
+  <div class="programs">
+    <% @programs.each do |program| %>
+      <div class="program">
+        <h2 class = "title-program" ><%= program.name %></h2>
+        <div class="flex-container">
+          <p class = "text-program"><%= program.description %></p>
+
+          <div class="buttons_class">
+            <%= image_tag program.image.url, :id => "image_id" %><br>
+            <%= link_to "Download", program.document.url(:original, false) %>
+            <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    <% end %>
+  </div>
+
 </body>
