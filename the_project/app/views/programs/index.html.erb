@@ -1,35 +1,47 @@
-<ul>
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Training programs', programs_path %></li>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Programs</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Training programs', programs_path %></li>
 
-  <% if user_signed_in? %>
-    <li class = "profile"><%= link_to current_user.email, edit_user_registration_path %></li>
-    <li class = "profile"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li class = "profile"><%= link_to 'Sign Up', new_user_registration_path %></li>
-    <li class = "profile"><%= link_to 'Sign In', new_user_session_path %></li>
-  <% end %>
+        <% if user_signed_in? %>
+          <li class = "profile"><%= link_to current_user.email, edit_user_registration_path %></li>
+          <li class = "profile"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class = "profile"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class = "profile"><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
 
-</ul>
-<body>
-  <h3><%= link_to "Create a new program",  new_program_path %></h3>
+      </ul>
+    </div>
 
-  <div class="programs">
-    <% @programs.each do |program| %>
-      <div class="program">
-        <h2 class = "title-program" ><%= program.name %></h2>
-        <div class="flex-container">
-          <p class = "text-program"><%= program.description %></p>
+    <div class = "container">
+      <h3><%= link_to "Create a new program",  new_program_path %></h3>
 
-          <div class="buttons_class">
-            <%= image_tag program.image.url, :id => "image_id" %><br>
-            <%= link_to "Download", program.document.url(:original, false) %>
-            <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
+      <div class="programs">
+        <% @programs.each do |program| %>
+          <div class="program">
+            <h2 class = "title-program" ><%= program.name %></h2>
+            <div class="flex-container">
+              <p class = "text-program"><%= program.description %></p>
+
+              <div class="buttons_class">
+                <%= image_tag program.image.url, :id => "image_id" %><br>
+                <%= link_to "Download", program.document.url(:original, false) %>
+                <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
+              </div>
+            </div>
           </div>
-        </div>
+          <br><br>
+        <% end %>
       </div>
-      <br><br>
-    <% end %>
-  </div>
 
-</body>
+    </div>
+  </body>
+</html>
