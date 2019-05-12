@@ -11,17 +11,34 @@
 
   <body>
     <%= yield %>
+    <div class="container">
+      <div class="navbar">
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Training programs', programs_path %></li>
 
-    <div class="footer">
+          <% if user_signed_in? %>
+            <li class = "profile"><%= link_to current_user.email, edit_user_registration_path %></li>
+            <li class = "profile"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class = "profile"><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li class = "profile"><%= link_to 'Sign In', new_user_session_path %></li>
+          <% end %>
 
-      <%= link_to "https://www.facebook.com/stefan.galabov.3" do %>
-        <%= image_tag 'fb-logo.png', class: 'footer-logos' %>
-      <% end %>
+        </ul>
+      </div>
 
-      <%= link_to "https://www.instagram.com/stefangalabov/?hl=bg" do %>
-        <%= image_tag 'insta-logo.png', class: 'footer-logos' %>
-      <% end %>
+      <div class="footer">
 
+        <%= link_to "https://www.facebook.com/stefan.galabov.3" do %>
+          <%= image_tag 'fb-logo.png', class: 'footer-logos' %>
+        <% end %>
+
+        <%= link_to "https://www.instagram.com/stefangalabov/?hl=bg" do %>
+          <%= image_tag 'insta-logo.png', class: 'footer-logos' %>
+        <% end %>
+
+      </div>
     </div>
   </body>
 </html>

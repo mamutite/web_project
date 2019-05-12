@@ -2,28 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <title>Home</title>
   </head>
   <body>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><%= link_to 'Training programs', programs_path %></li>
+    <div class="container">
+      <div id="main-text">
+        <p><strong>So you wanna become a better version of yourself?</strong></p>
 
-      <% if user_signed_in? %>
-        <li class = "profile"><%= link_to current_user.email, edit_user_registration_path %></li>
-        <li class = "profile"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li class = "profile"><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <li class = "profile"><%= link_to 'Sign In', new_user_session_path %></li>
-      <% end %>
-
-    </ul>
-
-    <div id="main-text">
-      <p><strong>So you wanna become a better version of yourself?</strong></p>
-
-      <%= link_to "Yes, let's do this.", programs_path, id: "main-button" %>
+        <%= link_to "Yes, let's do this.", programs_path, id: "main-button" %>
+      </div>  
     </div>
 
   </body>
