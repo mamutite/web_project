@@ -2,12 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+  margin-top: 50px;
+}
+
 .program{
-  background-color: #4da6ff;
+  background-color: #bdbebe;
   border-radius: 20px;
   text-align: left;
   overflow: hidden;
+  opacity: 0.5;
+}
 
+.program:hover{
+  opacity: 1;
 }
 
 .flex-container{
@@ -47,9 +55,18 @@
 }
 
 #new_program_button{
-  background-color: white;
+  background-color: #bdbebe;
   margin-bottom: 10px;
   border-radius: 20px;
+  text-align: center;
   height: 50px;
   width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.program_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -22,8 +22,10 @@
     </div>
 
     <div class = "container">
-      <button type="button" name="button" id="new_program_button"><%= link_to "Create a new program",  new_program_path %></button>
-      
+      <div class="program_button">
+        <%= link_to "Create a new program",  new_program_path, id: "new_program_button" %>
+      </div>
+
       <div class="programs">
         <% @programs.each do |program| %>
           <div class="program">

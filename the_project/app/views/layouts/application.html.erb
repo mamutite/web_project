@@ -11,5 +11,17 @@
 
   <body>
     <%= yield %>
+
+    <div class="footer">
+
+      <%= link_to "https://www.facebook.com/stefan.galabov.3" do %>
+        <%= image_tag 'fb-logo.png', class: 'footer-logos' %>
+      <% end %>
+
+      <%= link_to "https://www.instagram.com/stefangalabov/?hl=bg" do %>
+        <%= image_tag 'insta-logo.png', class: 'footer-logos' %>
+      <% end %>
+
+    </div>
   </body>
 </html>
