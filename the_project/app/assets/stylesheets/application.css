@@ -18,7 +18,15 @@
    background-image: url("workout-main-image.jpg");
    background-repeat: no-repeat;
    background-size: cover;
+   color: rgb(88, 83, 83);
+   background-color: rgb(0, 0, 0);
    background-position: center;
+   height: 100%;
+   width: 100%;
+ }
+
+ body{
+   margin-top: 15px;
  }
 
  ul {
@@ -72,5 +80,5 @@
  }
 
  .footer:hover{
-    opacity: 0.7;
+    opacity: 1;
  }

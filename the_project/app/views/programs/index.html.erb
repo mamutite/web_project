@@ -7,10 +7,12 @@
   <body>
 
     <div class = "container">
-      <div class="program_button">
+
+      <div class="button-container">
         <%= link_to "Create a new program",  new_program_path, id: "new_program_button" %>
       </div>
 
+      <br>
       <div class="programs">
         <% @programs.each do |program| %>
           <div class="program">
@@ -20,8 +22,8 @@
 
               <div class="buttons_class">
                 <%= image_tag program.image.url, :id => "image_id" %><br>
-                <%= link_to "Download", program.document.url(:original, false) %>
-                <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"} %>
+                <%= link_to "See pdf", program.document.url(:original, false), class: "program-attributes" %>
+                <%= link_to "Delete", program_path(program), method: :delete, data: {confirm: "Are you sure?"}, class: "program-attributes" %>
               </div>
             </div>
           </div>
